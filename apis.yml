@@ -1,17 +1,20 @@
 aid: aita
 name: AiTA
-description: 'AiTA is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'AiTA is a recruiting agency focused on artificial intelligence talent, offering AI companies access to a curated network of over 50,000 pre‑vetted engineers and executives. It provides end‑to‑end hiring services, candidate sourcing, and consulting for AI startups and enterprises, emphasizing rapid placement, high acceptance rates, and deep industry expertise across sectors such as healthtech, autonomous vehicles, and enterprise AI.'
 url: https://raw.githubusercontent.com/api-evangelist/aita/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-21 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-21'
 modified: '2026-09-21'
 tags:
 - Company
+- AI
+- Recruiting
+- Talent
+- Services
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +22,24 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: LLMsTxt
+  url: llms/aita-llms.txt
+- type: DomainSecurity
+  url: security/aita-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/aita_stock/
+  url: https://www.aitabio.com/
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: AiTA provides recruiting services and does not offer a developer program or public API.
+  evidence:
+    - url: https://developer.aita.com
+      status: unreachable
+  checked: 2026-09-21
+x-enrichment:
+  date: '2026-09-21'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
